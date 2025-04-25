@@ -10,7 +10,7 @@ private static Connection con;
 
 public static Connection getDbConnection() throws ClassNotFoundException, SQLException{
 	Class.forName("com.mysql.cj.jdbc.Driver");
-	con=DriverManager.getConnection("jdbc:mysql://localhost:3306/ airline_reservation_system","root","password");
+	con=DriverManager.getConnection("jdbc:mysql://localhost:3306/airline_reservation_system","root","password");
 	return con;
 }
 

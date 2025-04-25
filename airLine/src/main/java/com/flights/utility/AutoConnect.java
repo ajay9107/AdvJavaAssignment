@@ -9,7 +9,7 @@ public class AutoConnect {
 	public static Connection autoConnect() throws SQLException, ClassNotFoundException 
 	{
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		String url="jdbc:mysql://localhost:3306/flight_reservation";
+		String url="jdbc:mysql://localhost:3306/airline_reservation_system";
 		String user="root";
 		String pass="password";
 		con=DriverManager.getConnection(url, user, pass);

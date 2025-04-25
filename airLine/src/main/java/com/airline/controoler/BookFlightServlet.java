@@ -1,6 +1,8 @@
 package com.airline.controoler;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+
 
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -10,9 +12,10 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
+import com.airline.entity.Booking;
 import com.airline.service.BookingService;
-
 
 
 /**
@@ -55,6 +58,10 @@ public class BookFlightServlet extends HttpServlet {
 		
 		if(isBooked) {
 			out.println("<h2 style='color:green'>Flight Booked Successfully !!! </h2>");
+			List<Booking> bookings=new BookingService().findBooking(userId);
+			RequestDispatcher dispatcher=request.getRequestDispatcher("showBooking.jsp");
+			request.setAttribute("booking",bookings);
+			dispatcher.include(request, response);
 		}else {
 			out.println("<h2 style= 'color:red' > Failed to Book Flight !!!! </h2>");
 		}

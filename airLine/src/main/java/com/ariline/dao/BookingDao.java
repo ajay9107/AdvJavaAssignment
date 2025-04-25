@@ -37,6 +37,7 @@ public class BookingDao {
 	}
 	public List<Booking> findBooking(int uId)
 	{
+		System.out.println("hit");
 		List<Booking> bookings=new ArrayList<>();
 		{ query="select * from booking where  user_id=?";
 		try(Connection con=AutoConnect.autoConnect();

@@ -1,5 +1,8 @@
 package com.airline.service;
 
+import java.util.List;
+
+import com.airline.entity.Booking;
 import com.ariline.dao.BookingDao;
 
 public class BookingService {
@@ -13,8 +16,13 @@ public class BookingService {
 	
 
 }
+ public List<Booking> findBooking(int uId)
+	{
+		return bookingDao.findBooking(uId);
+	}
 public boolean cancelFlight(int bId)
 	{
 		return bookingDao.cancelFlight(bId);
 	}
+
 }
